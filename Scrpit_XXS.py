@@ -2,20 +2,34 @@ import requests
 
 import urllib.parse
 
+import sys
+
+
 # URL de la página vulnerable
 
 url = 'http://localhost:8080/AltoroJ/search.jsp'
+
+
+
+# Payload con el XSS que envías en la query
 
 payload = "<script>alert('Hola, soy un script');</script>"
 
 #payload = "hola"
 
+# Codificar el payload para incluirlo en la URL
+
 encoded_payload = urllib.parse.quote(payload)
+
 
 
 full_url = f"{url}?query={encoded_payload}"
 
+
+
 response = requests.get(full_url)
+
+
 
 if response.status_code == 200:
 
@@ -23,11 +37,11 @@ if response.status_code == 200:
 
     if payload in html_content:
 
-        print("1, El payload fue reflejado en la respuesta HTML")
+        sys.exit(1)
 
     else:
 
-         print("0, El payload no se encontro")
+         sys.exit(0)
 
 else:
 
