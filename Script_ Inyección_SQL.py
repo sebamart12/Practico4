@@ -1,8 +1,8 @@
 import requests
 import sys
+import URLs
 
-url = "http://localhost:8080/AltoroJ/doLogin"
-
+url = URLs.url_injection
 
 paramsattack = {
     "uid": "' OR 1=1--", 

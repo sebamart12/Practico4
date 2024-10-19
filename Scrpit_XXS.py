@@ -1,12 +1,12 @@
 import requests
-
+import URLs
 import urllib.parse
 
 import sys
 
 # URL de la página vulnerable
 
-url = 'http://localhost:8080/AltoroJ/search.jsp'
+url =URLs.url_XSS
 
 # Payload con el XSS que envías en la query
 
