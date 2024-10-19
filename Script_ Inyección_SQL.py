@@ -14,7 +14,6 @@ paramsattack = {
     "passw": "hola", 
 
     "btnSubmit": "Login"
-
 }
 
 def Login(params):
